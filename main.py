@@ -15,6 +15,7 @@ quotes_data = response.json()
 # print(quotes_data["Quotes"][0][81])
 
 movies = []
+saved_movies = []
 quotes = quotes_data["Quotes"][0]
 
 for num in range(len(quotes_data["Quotes"][0])):
@@ -26,6 +27,8 @@ user_input = input("Please enter a movie title: ")
 
 if user_input in movies:
     movie_index = movies.index(user_input)
+    saved_movies.append({movies[movie_index]:quotes[movie_index]["quote"]})
     print(f"The quote from {movies[movie_index]} is: \"{quotes[movie_index]["quote"]}\"")
+    print(saved_movies)
 else:
     print("The movie you entered does not exist in our database. Please enter a different movie title.")
