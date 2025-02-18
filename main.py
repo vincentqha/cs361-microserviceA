@@ -10,13 +10,10 @@ if response.status_code != 200:
 
 quotes_data = response.json()
 
-# quotes_data["Quotes"][0][object_num][property]
-# print(len(quotes_data["Quotes"][0]))
-# print(quotes_data["Quotes"][0][81])
-
 movies = []
 saved_movies = []
 quotes = quotes_data["Quotes"][0]
+genre_count = {}
 
 for num in range(len(quotes_data["Quotes"][0])):
     movies.append(quotes[num]["movie_title"])
@@ -28,7 +25,12 @@ user_input = input("Please enter a movie title: ")
 if user_input in movies:
     movie_index = movies.index(user_input)
     saved_movies.append({movies[movie_index]:quotes[movie_index]["quote"]})
+
+    if quotes[movie_index]["category"] not in genre_count:
+        genre_count[quotes[movie_index]["category"]] = 1
+    else:
+        genre_count[quotes[movie_index]["category"]] += 1
+
     print(f"The quote from {movies[movie_index]} is: \"{quotes[movie_index]["quote"]}\"")
-    print(saved_movies)
 else:
     print("The movie you entered does not exist in our database. Please enter a different movie title.")
