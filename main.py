@@ -18,24 +18,38 @@ genre_count = {}
 for num in range(len(quotes_data["Quotes"][0])):
     movies.append(quotes[num]["movie_title"])
 
-while True:
 
-    print(f"\nTo query a movie quote, please enter a movie title.\n")
+def query_movie_quotes():
+    while True:
 
-    user_input = input("Please enter a movie title: ")
+        print(f"\nTo query a movie quote, please enter a movie title.\n")
 
-    if user_input in movies:
-        movie_index = movies.index(user_input)
-        saved_movies.append({movies[movie_index]:quotes[movie_index]["quote"]})
+        user_input = input("Please enter a movie title: ")
 
-        if quotes[movie_index]["category"] not in genre_count:
-            genre_count[quotes[movie_index]["category"]] = 1
+        if user_input in movies:
+            movie_index = movies.index(user_input)
+            saved_movies.append({movies[movie_index]:quotes[movie_index]["quote"]})
+
+            if quotes[movie_index]["category"] not in genre_count:
+                genre_count[quotes[movie_index]["category"]] = 1
+            else:
+                genre_count[quotes[movie_index]["category"]] += 1
+
+            print(f"\nThe quote from {movies[movie_index]} is: \n\"{quotes[movie_index]["quote"]}\"")
+
+        elif user_input == "history":
+            print(f"\n{saved_movies}")
+
+        elif user_input == "stats":
+            print(f"\n{genre_count}")
+
+        elif user_input == "quit":
+            print(f"\nQuitting...")
+            break
+
+
         else:
-            genre_count[quotes[movie_index]["category"]] += 1
+            print("The movie you entered does not exist in our database. Please enter a different movie title.")
 
-        print(f"The quote from {movies[movie_index]} is: \n\"{quotes[movie_index]["quote"]}\"")
 
-        print(saved_movies)
-        print(genre_count)
-    else:
-        print("The movie you entered does not exist in our database. Please enter a different movie title.")
+query_movie_quotes()
