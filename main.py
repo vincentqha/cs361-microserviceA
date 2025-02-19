@@ -15,7 +15,7 @@ saved_movies = []
 quotes = quotes_data["Quotes"][0]
 genre_count = {}
 
-for num in range(len(quotes_data["Quotes"][0])):
+for num in range(len(quotes)):
     movies.append(quotes[num]["movie_title"])
 
 
@@ -46,7 +46,6 @@ def query_movie_quotes():
         elif user_input == "quit":
             print(f"\nQuitting...")
             break
-
 
         else:
             print("The movie you entered does not exist in our database. Please enter a different movie title.")
