@@ -10,7 +10,9 @@ def get_movie_info(u_input):
     if response.status_code == 200:
         return response.json()
     else:
-        return response.json()
+        error = response.json().get('error', {})
+        print(f"Error: {error.get('message', response.json())}")
+        return None
 
 
 if __name__ == '__main__':
@@ -19,7 +21,7 @@ if __name__ == '__main__':
         user_input = input("Please enter movie title: ")
         movie_info = get_movie_info(user_input)
 
-        print(f"\nThe JSON received from service.py: ")
+        print(f"\nThe JSON received from service.py: \n")
         pprint(movie_info)
         print()
 
