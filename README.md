@@ -1,7 +1,9 @@
 # Movie Quotes Microservice
 
-CS 361 Microservice A for teammate that provides movie quotes information via HTTP/JSON communication via Flask. It 
+CS 361 Microservice A for teammate that provides movie quotes information via REST API HTTP/JSON communication pipe. It 
 returns relevant data such as movie quote, movie title, actor/character who spoke the quote, and genre. 
+
+
 
 ## To programmatically REQUEST data from Microservice A
 To programmatically REQUEST data from Microservice A, include this function in your Python file:

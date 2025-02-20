@@ -19,6 +19,7 @@ if __name__ == '__main__':
 
     while True:
         user_input = input("Please enter movie title: ")
+        print("Requesting data...")
         movie_info = get_movie_info(user_input.strip())
 
         print(f"\nThe JSON received from service.py: \n")

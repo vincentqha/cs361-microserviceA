@@ -37,12 +37,17 @@ def query_movie_quotes():
         else:
             genre_count[movie_data["category"]] += 1
 
+        print(f"\nResponding with data...")
         return jsonify(movie_data)
 
     elif user_input == "history":
+
+        print(f"\nResponding with data...")
         return jsonify(saved_movies)
 
     elif user_input == "stats":
+
+        print(f"\nResponding with data...")
         return jsonify(genre_count)
 
     else:
