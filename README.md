@@ -166,6 +166,6 @@ def get_movie_info(u_input):
         return response.json()
 
 correct_movie = "Batman Begins" # this would yield a successful response from the microservice 
-incorrect_movie = "batman begins" # this would yield None from the microservice
+incorrect_movie = "batman begins" # this would yield None from the microservice.
 response_data = get_movie_info(correct_movie)
 ```
