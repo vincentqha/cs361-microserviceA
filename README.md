@@ -17,8 +17,8 @@ https://flask.palletsprojects.com/en/stable/installation/
 ```commandline
 pip install Flask
 ```
-__Note:__ If you're using PyCharm: you can easily install Flask by navigating to the Python Packages tab, search for 
-"Flask", and then install it. 
+__Note:__ If you're using PyCharm: you can easily install Flask by navigating to the Python Packages tab 
+(bottom left corner), searching for "Flask", and then installing it. 
 
 ### 3. Start the movie quotes microservice
 ```commandline
