@@ -33,9 +33,9 @@ To programmatically REQUEST data from Microservice A, include this function in y
 import requests
 
 def get_movie_info(u_input):
-    url = 'http://127.0.0.1:5000/get_movie_quote'
-    params = {'input': u_input}
-    response = requests.get(url, params=params)
+    url = 'http://127.0.0.1:5000/get_movie_quote'  # URL where Microservice A is hosted
+    params = {'input': u_input}  # u_input is sent as the parameter 
+    response = requests.get(url, params=params)  # Sends a GET request to the URL defined above
 
     if response.status_code == 200:
         return response.json()
@@ -66,7 +66,7 @@ def get_movie_info(u_input):
         return response.json()
 
 movie = "Batman Begins"
-response_data = get_movie_info(movie)
+response_data = get_movie_info(movie)  # The data received from Microservice A is stored in response_data for use
 ```
 Here, ```response_data``` contains the JSON with all the movie details, including the quote. Here's an example of what the response data looks
 like:
@@ -147,11 +147,11 @@ what the response data looks like:
 ## UML Sequence Diagram 
 
 ## Additional Notes
-1. No API key is needed because the microservice uses a public API that is accessible without the need for a key. You
+1. No API key is needed because Microservice A uses a public API that is accessible without the need for a key. You
 can check the contents of the API at: https://quoteapi.pythonanywhere.com/quotes/
 
-2. The microservice makes the API call and stores the movie database locally.
-3. Parameters that are passed into the request from client to microservice are case-sensitive.
+2. Microservice A makes the API call and stores the movie database locally in a variable.
+3. Parameters that are passed into the request from client to Microservice A are case-sensitive.
 ```python
 import requests
 
@@ -165,7 +165,7 @@ def get_movie_info(u_input):
     else:
         return response.json()
 
-correct_movie = "Batman Begins" # this would yield a successful response from the microservice 
-incorrect_movie = "batman begins" # this would yield None from the microservice.
+correct_movie = "Batman Begins" # This would yield a successful response from Microservice A 
+incorrect_movie = "batman begins" # This would yield None from Microservice A
 response_data = get_movie_info(correct_movie)
 ```
