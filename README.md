@@ -24,7 +24,7 @@ __Note:__ If you're using PyCharm: you can easily install Flask by navigating to
 ```commandline
 python service.py
 ```
-Once service.py is running, ```Running on http://localhost:5000``` will print to the terminal window.
+Once ```service.py``` is running, ```Running on http://localhost:5000``` will print to the terminal window.
 
 ## To REQUEST data from Microservice A
 To programmatically REQUEST data from Microservice A, include this function in your Python file:
