@@ -145,6 +145,7 @@ what the response data looks like:
 ```
 
 ## UML Sequence Diagram 
+![CS361 Microservice A UML Diagram.jpg](./images/CS361_MicroserviceA_UMLDiagram.jpg)
 
 ## Additional Notes
 1. No API key is needed because Microservice A uses a public API that is accessible without the need for a key. You
